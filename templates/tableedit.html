@@ -1,0 +1,31 @@
+{% extends "base2.html" %}
+{% block content %}
+
+<!doctype html>
+<html>
+   <body>
+
+      <table border = 2>
+         <thead>
+            <td>ID</td>
+            <td>Company Name</td>
+            <td>Email</td>
+            <td>Phone Number</td>
+            <td>Address</td>
+
+         </thead>
+
+         {% for row in rows %}
+            <tr>
+               <td>{{row['id']}}</td>
+               <td>{{row["cname"]}}</td>
+               <td>{{row["email"]}}</td>
+               <td> {{ row["phone"]}}</td>
+               <td>{{row['address']}}</td>
+
+            </tr>
+         {% endfor %}
+      </table>
+   </body>
+</html>
+{% endblock content %}

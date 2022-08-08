@@ -1,0 +1,76 @@
+{% extends "base2.html" %}
+{% block content %}
+
+<form action = "{{ url_for('mainpy') }}" method = "POST">
+      <div class="col-md-5">
+
+
+      <label for="fname">Comapny Name:</label>
+      <input type="text" class="form-control" name="cname" id="cname" />
+
+      </div>
+
+<div class="col-md-5">
+    <label for="lname">Email:</label>
+
+    <input type="text" class="form-control"   name="email" id="email" />
+
+
+</div>
+
+
+<div class="col-md-5">
+
+
+    <label for="grade">phone:</label>
+    <input type="text" class="form-control" name="phone" id="phone" />
+</div>
+
+<div class="col-md-5">
+   
+    
+        <label for="grade">Address:</label>
+        <input type="text" class="form-control" name="address" id="address" />
+    </div>
+
+ <br/><br>
+ <br>
+ 
+    <input type="submit"  class="btn btn-success" name="submit" value="Submit"/>
+
+    </form>
+<br>
+<form action = "{{ url_for('list') }}" method = "GET">
+<br><br>
+
+    <input type="submit" class="btn btn-warning name="submit" value="Results"/>
+
+
+</form>
+
+<form action = "{{ url_for('delete') }}" method = "POST">
+ <label for="id">Enter the Phone Number to remove from Records</label>
+    <input type="text" name="phone" id="phone" />
+<p>
+    <input type="submit" class="btn btn-danger" name="submit" value="Delete"/>
+</p>
+</form>
+<form action = "{{ url_for('update') }}" method = "POST">
+ <label for="grade">Update Records:</label>
+    <input type="text" name="cname" id="cname" placeholder="Company Name"/>
+    <input type="text" name="email" id="email" placeholder="Email ID"/>
+    <input type="text" name="phone" id="phone" placeholder="Phone Number"/>
+    <input type="text" name="address" id="address" placeholder="Address"/>
+    <br>
+ <label for="id">Confirm the Serial Id to Update the Record:</label>
+    <input type="text" name="id" id="id" />
+<p>
+    <input type="submit" class="btn btn-success" name="submit" value="Update"/>
+</p>
+</form>
+
+
+
+
+
+{% endblock %}
